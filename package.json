@@ -1,17 +1,16 @@
 {
-  "name": "tab-node-ts-template",
-  "version": "1.0.0",
+  "name": "nextdns",
+  "version": "0.0.1",
   "author": "TAB_mk <tabmk.contact@gmail.com>",
-  "repository": "https://github.com/TABmk/REPO.git",
-  "homepage": "https://github.com/TABmk/REPO.git",
-  "bugs": "https://github.com/TABmk/REPO/issues",
+  "repository": "https://github.com/TABmk/NextDNS-API.git",
+  "homepage": "https://github.com/TABmk/NextDNS-API.git",
+  "bugs": "https://github.com/TABmk/NextDNS-API/issues",
   "license": "MIT",
   "scripts": {
     "build": "tsc --project tsconfig.eslint.json",
     "start": "yarn build && node ./build/index.js",
     "dev": "nodemon",
     "lint": "eslint",
-    "docs": "typedoc --tsconfig tsconfig.eslint.json && open file://$(pwd)/docs/index.html",
     "minify": "minify ./index.js > ./index.min && mv ./index.min ./index.js",
     "npm-size": "yarn pack -s && echo \"📈 Size: $(wc -c < $(ls ./*.tgz))b\" && rm -rf ./*.tgz"
   },
@@ -20,6 +19,7 @@
   "types": "index.d.ts",
   "devDependencies": {
     "@types/node": "18.11.18",
+    "@types/node-fetch": "^2.6.3",
     "@typescript-eslint/eslint-plugin": "5.47.1",
     "@typescript-eslint/parser": "5.47.1",
     "eslint": "8.2.0",
@@ -28,7 +28,9 @@
     "eslint-plugin-import": "2.25.2",
     "minify": "9.2.0",
     "nodemon": "2.0.20",
-    "typedoc": "0.23.23",
     "typescript": "4.9.4"
+  },
+  "dependencies": {
+    "node-fetch": "2"
   }
 }
